@@ -33,7 +33,7 @@ public class OrderController {
     }
 
     @PostMapping("/{pizzaId}")
-    public String processOrder(UUID pizzaId, PizzaOrder pizzaOrder) {
+    public String processOrder(@PathVariable UUID pizzaId, PizzaOrder pizzaOrder) {
 
         // Save the order
         pizzaOrder.setPizza(getPizza(pizzaId));
