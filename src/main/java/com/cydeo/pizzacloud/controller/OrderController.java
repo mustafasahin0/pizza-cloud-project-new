@@ -19,8 +19,8 @@ public class OrderController {
         this.pizzaRepository = pizzaRepository;
     }
 
-    @GetMapping("/current?{pizzaId}")
-    public String orderForm(@PathVariable UUID pizzaId, Model model) {
+    @GetMapping("/current")
+    public String orderForm(@RequestParam UUID pizzaId, Model model) {
 
         PizzaOrder pizzaOrder = new PizzaOrder();
 
