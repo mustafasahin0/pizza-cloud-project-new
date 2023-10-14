@@ -5,6 +5,7 @@ import com.cydeo.pizzacloud.model.Pizza;
 import com.cydeo.pizzacloud.repository.PizzaRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.UUID;
@@ -15,7 +16,7 @@ public class DesignPizzaController {
 
     private PizzaRepository pizzaRepository;
 
-    @PostMapping
+    @GetMapping("/design")
     public String showDesignForm(Model model) {
 
         model.addAttribute("cheeses", DataGenerator.cheeseTypeList);
@@ -32,7 +33,7 @@ public class DesignPizzaController {
         pizza.setId(UUID.randomUUID());
         pizzaRepository.createPizza(pizza);
 
-        return "redirect:/orders/current?pizzaId=" + pizza.getId();
+        return "/orderForm";
 
     }
 
