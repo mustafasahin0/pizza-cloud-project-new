@@ -8,16 +8,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.UUID;
 
 @Controller
-
+@RequestMapping("/design")
 public class DesignPizzaController {
 
     private PizzaRepository pizzaRepository;
 
-    @GetMapping("/design")
+    public DesignPizzaController(PizzaRepository pizzaRepository) {
+        this.pizzaRepository = pizzaRepository;
+    }
+
+    @GetMapping()
     public String showDesignForm(Model model) {
 
         model.addAttribute("pizza", new Pizza());
