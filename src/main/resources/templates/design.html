@@ -27,7 +27,7 @@
                     <div th:each="cheese : ${cheeses}">
                     <input type="checkbox"
                            th:value="${cheese}"/>
-                    <span th:text="${cheese}"></span><br/>
+                    <span th:text="${cheese.value}"></span><br/>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                     <div th:each="sauce : ${sauces}">
                         <input type="checkbox"
                                th:value="${sauce}"/>
-                        <span th:text="${sauce}"></span><br/>
+                        <span th:text="${sauce.value}"></span><br/>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     <div th:each="topping : ${toppings}">
                         <input type="checkbox"
                                th:value="${topping}"/>
-                        <span th:text="${topping}"></span><br/>
+                        <span th:text="${topping.value}"></span><br/>
                     </div>
                 </div>
             </div>
